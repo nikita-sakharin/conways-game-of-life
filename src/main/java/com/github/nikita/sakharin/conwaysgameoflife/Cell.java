@@ -29,7 +29,7 @@ public final class Cell {
     }
 
     @Override
-    public boolean equals(final Object obj) {
+    public final boolean equals(final Object obj) {
         if (this == obj)
             return true;
         if (obj == null || getClass() != obj.getClass())
