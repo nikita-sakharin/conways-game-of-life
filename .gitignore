@@ -15,3 +15,4 @@
 *.txz
 *.war
 *.zip
+target/
