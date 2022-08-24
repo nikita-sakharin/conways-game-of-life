@@ -164,6 +164,7 @@
                         </compilerArgs>
                         <debug>false</debug>
                         <debuglevel>none</debuglevel>
+                        <enablePreview>false</enablePreview>
                         <encoding>${project.build.sourceEncoding}</encoding>
                         <failOnError>true</failOnError>
                         <failOnWarning>true</failOnWarning>
