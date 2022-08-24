@@ -200,6 +200,7 @@
                         <reuseForks>true</reuseForks>
                         <forkCount>1</forkCount>
                         <testFailureIgnore>false</testFailureIgnore>
+                        <printSummary>true</printSummary>
                     </configuration>
                     <executions>
                         <execution>
