@@ -135,6 +135,7 @@
                                 <addDefaultSpecificationEntries>false</addDefaultSpecificationEntries>
                                 <addExtensions>false</addExtensions>
                                 <mainClass>com.github.nikita.sakharin.conwaysgameoflife.Main</mainClass>
+                                <packageName>com.github.nikita.sakharin.conwaysgameoflife</packageName>
                             </manifest>
                         </archive>
                         <descriptorRefs>
