@@ -159,6 +159,7 @@
                             <arg>-deprecation</arg>
                             <arg>-g:none</arg>
                             <arg>-Werror</arg>
+                        <!--<arg>-Xdoclint:all</arg>-->
                             <arg>-Xlint:all</arg>
                         </compilerArgs>
                         <debug>false</debug>
@@ -172,6 +173,10 @@
                         <optimize>true</optimize>
                         <showDeprecation>true</showDeprecation>
                         <showWarnings>true</showWarnings>
+                        <source>${maven.compiler.source}</source>
+                        <target>${maven.compiler.target}</target>
+                        <testSource>${maven.compiler.source}</testSource>
+                        <testTarget>${maven.compiler.target}</testTarget>
                         <useIncrementalCompilation>true</useIncrementalCompilation>
                     </configuration>
                     <executions>
