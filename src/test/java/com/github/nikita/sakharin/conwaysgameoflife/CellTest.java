@@ -1,9 +1,9 @@
 package com.github.nikita.sakharin.conwaysgameoflife;
 
 import java.util.List;
+import org.junit.Test;
 import static java.util.stream.Collectors.toList;
 import static org.junit.Assert.assertEquals;
-import org.junit.Test;
 
 import static com.github.nikita.sakharin.conwaysgameoflife.Cell.parseCell;
 

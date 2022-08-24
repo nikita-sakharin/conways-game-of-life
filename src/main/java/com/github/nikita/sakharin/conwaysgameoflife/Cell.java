@@ -1,9 +1,9 @@
 package com.github.nikita.sakharin.conwaysgameoflife;
 
+import java.util.stream.Stream;
 import static java.lang.Integer.parseInt;
 import static java.util.Objects.hash;
 import static java.util.stream.IntStream.rangeClosed;
-import java.util.stream.Stream;
 
 public final class Cell {
     private static final int RADIX = 10;

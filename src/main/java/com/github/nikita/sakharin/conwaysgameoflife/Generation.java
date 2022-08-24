@@ -1,11 +1,11 @@
 package com.github.nikita.sakharin.conwaysgameoflife;
 
 import java.util.Map.Entry;
-import static java.util.Map.entry;
 import java.util.function.Consumer;
+import java.util.stream.Stream;
+import static java.util.Map.entry;
 import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.reducing;
-import java.util.stream.Stream;
 
 public class Generation implements AutoCloseable {
     private final Stream<Cell> liveCells;
