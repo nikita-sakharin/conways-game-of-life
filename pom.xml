@@ -11,7 +11,9 @@
     <url>https://github.com/nikita-sakharin/conways-game-of-life</url>
     <inceptionYear>2022</inceptionYear>
     <licenses>
-        <license>Apache-2.0<license/>
+        <license>
+            <name>Apache-2.0</name>
+        </license>
     </licenses>
 
     <properties>
