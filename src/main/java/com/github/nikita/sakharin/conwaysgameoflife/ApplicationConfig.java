@@ -18,7 +18,7 @@ public class ApplicationConfig {
     @Bean
     @Profile("!test")
     public Generation firstGeneration(@Value("${cells}") final String[] cells) {
-        return new Generation(Stream.of(cells).map(Cell::parseCell));
+        return new Generation(Stream.of(cells).map(Cell::parse));
     }
 
     @Bean("runnable")
