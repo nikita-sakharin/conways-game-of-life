@@ -7,7 +7,7 @@ import static java.util.Map.entry;
 import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.reducing;
 
-public class Generation implements AutoCloseable {
+public final class Generation implements AutoCloseable {
     private final Stream<Cell> liveCells;
 
     private Generation() {
