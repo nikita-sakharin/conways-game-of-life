@@ -12,8 +12,8 @@ public final class CellTest {
 
     @Test
     public final void testGetNeighbours() {
-        for (int i = -LIMIT; i <= LIMIT; ++i)
-            for (int j = -LIMIT; j <= LIMIT; ++j)
+        for (int i = -LIMIT; i < LIMIT; ++i)
+            for (int j = -LIMIT; j < LIMIT; ++j)
                 assertEquals(List.of(
                     Cell.of(i - 1, j - 1), Cell.of(i - 1, j),
                     Cell.of(i - 1, j + 1), Cell.of(i, j - 1),
@@ -24,15 +24,15 @@ public final class CellTest {
 
     @Test
     public final void testOf() {
-        for (int i = -LIMIT; i <= LIMIT; ++i)
-            for (int j = -LIMIT; j <= LIMIT; ++j)
+        for (int i = -LIMIT; i < LIMIT; ++i)
+            for (int j = -LIMIT; j < LIMIT; ++j)
                 assertEquals(new Cell(i, j), Cell.of(i, j));
     }
 
     @Test
     public final void testParse() {
-        for (int i = -LIMIT; i <= LIMIT; ++i)
-            for (int j = -LIMIT; j <= LIMIT; ++j)
+        for (int i = -LIMIT; i < LIMIT; ++i)
+            for (int j = -LIMIT; j < LIMIT; ++j)
                 assertEquals(Cell.of(i, j), parse("(" + i + ";" + j + ")"));
     }
 }
