@@ -5,7 +5,7 @@ import org.junit.Test;
 import static java.util.stream.Collectors.toList;
 import static org.junit.Assert.assertEquals;
 
-import static com.github.nikita.sakharin.conwaysgameoflife.Cell.parseCell;
+import static com.github.nikita.sakharin.conwaysgameoflife.Cell.parse;
 
 public final class CellTest {
     private static final int LIMIT = 64;
@@ -30,9 +30,9 @@ public final class CellTest {
     }
 
     @Test
-    public final void testParseCell() {
+    public final void testParse() {
         for (int i = -LIMIT; i <= LIMIT; ++i)
             for (int j = -LIMIT; j <= LIMIT; ++j)
-                assertEquals(Cell.of(i, j), parseCell("(" + i + ";" + j + ")"));
+                assertEquals(Cell.of(i, j), parse("(" + i + ";" + j + ")"));
     }
 }
