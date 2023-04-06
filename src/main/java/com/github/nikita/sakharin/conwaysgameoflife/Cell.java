@@ -19,7 +19,7 @@ public final class Cell {
         return new Cell(i, j);
     }
 
-    public static Cell parseCell(final String string) {
+    public static Cell parse(final String string) {
         final var split = string.split(";");
         if (!split[0].startsWith("(") || !split[1].endsWith(")"))
             throw new IllegalArgumentException(string);
