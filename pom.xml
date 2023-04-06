@@ -10,6 +10,9 @@
     <name>Conway's Game of Life</name>
     <url>https://github.com/nikita-sakharin/conways-game-of-life</url>
     <inceptionYear>2022</inceptionYear>
+    <licenses>
+        <license><license/>
+    </licenses>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
