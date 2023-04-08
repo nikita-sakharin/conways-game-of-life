@@ -6,6 +6,7 @@ import java.util.stream.Stream;
 import static java.util.Map.entry;
 import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.reducing;
+import static java.util.stream.Stream.concat;
 
 public final class Generation implements AutoCloseable {
     private final Stream<Cell> liveCells;
@@ -41,7 +42,7 @@ public final class Generation implements AutoCloseable {
     }
 
     private final Stream<Entry<Cell, Boolean>> getCellsWithNeighbours() {
-        return liveCells.flatMap(cell -> Stream.concat(
+        return liveCells.flatMap(cell -> concat(
             Stream.of(entry(cell, true)),
             cell.getNeighbours().map(neighbour -> entry(neighbour, false))
         ));
