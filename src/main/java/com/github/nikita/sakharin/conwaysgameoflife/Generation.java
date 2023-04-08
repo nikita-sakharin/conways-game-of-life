@@ -48,7 +48,7 @@ public final class Generation implements AutoCloseable {
     }
 
     @Override
-    public void close() {
+    public final void close() {
         liveCells.close();
     }
 
@@ -56,7 +56,9 @@ public final class Generation implements AutoCloseable {
         liveCells.forEach(action);
     }
 
-    public Generation getNextGeneration(final Consumer<? super Cell> action) {
+    public final Generation getNextGeneration(
+        final Consumer<? super Cell> action
+    ) {
         final var cellsWithNeighbours = getCellsWithNeighbours();
         final var collector = groupingBy(Entry::getKey, reducing(
             entry(false, 0),
