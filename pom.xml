@@ -211,8 +211,7 @@
                         <enableAssertions>true</enableAssertions>
                         <encoding>${project.reporting.outputEncoding}</encoding>
                         <reuseForks>true</reuseForks>
-                        <forkCount>1C</forkCount>
-                        <parallel>all</parallel>
+                        <forkCount>1</forkCount>
                         <testFailureIgnore>false</testFailureIgnore>
                         <printSummary>true</printSummary>
                     </configuration>
