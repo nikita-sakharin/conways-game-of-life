@@ -185,7 +185,6 @@
                         <fork>true</fork>
                         <maxmem>4096M</maxmem>
                         <meminitial>512M</meminitial>
-                        <optimize>true</optimize>
                         <showDeprecation>true</showDeprecation>
                         <showWarnings>true</showWarnings>
                         <source>${maven.compiler.source}</source>
