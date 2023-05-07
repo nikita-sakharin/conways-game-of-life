@@ -19,16 +19,17 @@
     </licenses>
 
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <java.version>11</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <junit.version>4.13.2</junit.version>
         <logback.version>1.2.11</logback.version>
-        <maven-assembly-plugin.version>3.3.0</maven-assembly-plugin.version>
+        <maven-assembly-plugin.version>3.5.0</maven-assembly-plugin.version>
         <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
-        <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+        <maven-surefire-plugin.version>3.0.0</maven-surefire-plugin.version>
         <mockito.version>5.0.0</mockito.version>
         <slf4j.version>1.7.36</slf4j.version>
         <spring.version>5.3.26</spring.version>
@@ -184,7 +185,7 @@
                         <fork>true</fork>
                         <maxmem>4096M</maxmem>
                         <meminitial>512M</meminitial>
-                        <optimize>true</optimize>
+                        <parameters>false</parameters>
                         <showDeprecation>true</showDeprecation>
                         <showWarnings>true</showWarnings>
                         <source>${maven.compiler.source}</source>
@@ -207,7 +208,7 @@
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>${maven-surefire-plugin.version}</version>
                     <configuration>
-                        <enableAssertations>true</enableAssertations>
+                        <enableAssertions>true</enableAssertions>
                         <encoding>${project.reporting.outputEncoding}</encoding>
                         <reuseForks>true</reuseForks>
                         <forkCount>1</forkCount>
