@@ -32,7 +32,7 @@
         <maven-surefire-plugin.version>3.0.0</maven-surefire-plugin.version>
         <mockito.version>5.0.0</mockito.version>
         <slf4j.version>1.7.36</slf4j.version>
-        <spring.version>5.3.26</spring.version>
+        <spring.version>5.3.27</spring.version>
     </properties>
 
     <dependencyManagement>
