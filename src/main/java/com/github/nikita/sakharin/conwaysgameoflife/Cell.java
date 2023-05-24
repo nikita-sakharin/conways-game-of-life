@@ -29,12 +29,12 @@ public final class Cell {
     }
 
     @Override
-    public final boolean equals(final Object obj) {
-        if (this == obj)
+    public final boolean equals(final Object object) {
+        if (this == object)
             return true;
-        if (obj == null || getClass() != obj.getClass())
+        if (object == null || getClass() != object.getClass())
             return false;
-        final Cell cell = (Cell) obj;
+        final Cell cell = (Cell) object;
         return i == cell.i && j == cell.j;
     }
 
