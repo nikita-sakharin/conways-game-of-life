@@ -45,7 +45,7 @@ public final class Cell {
 
     @Override
     public final String toString() {
-        return "Cell(" + i + "," + j + ")";
+        return "Cell(i=" + i + ", j=" + j + ")";
     }
 
     public final int getI() {
