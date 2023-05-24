@@ -34,7 +34,7 @@ public final class Cell {
             return true;
         if (object == null || getClass() != object.getClass())
             return false;
-        final Cell cell = (Cell) object;
+        final var cell = (Cell) object;
         return i == cell.i && j == cell.j;
     }
 
