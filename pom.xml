@@ -29,6 +29,7 @@
     <logback.version>1.4.8</logback.version>
     <maven-assembly-plugin.version>3.6.0</maven-assembly-plugin.version>
     <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
+    <maven-dependency-plugin.version>3.6.0</maven-dependency-plugin.version>
     <maven-surefire-plugin.version>3.1.2</maven-surefire-plugin.version>
     <mockito.version>5.4.0</mockito.version>
     <slf4j.version>2.0.7</slf4j.version>
@@ -118,12 +119,14 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>${maven-compiler-plugin.version}</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>${maven-surefire-plugin.version}</version>
       </plugin>
     </plugins>
 
@@ -163,6 +166,7 @@
             </execution>
           </executions>
         </plugin>
+
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
@@ -203,6 +207,29 @@
             </execution>
           </executions>
         </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-dependency-plugin</artifactId>
+          <version>${maven-dependency-plugin.version}</version>
+          <configuration>
+            <analyzer>default</analyzer>
+            <failOnWarning>true</failOnWarning>
+            <ignoreAllNonTestScoped>false</ignoreAllNonTestScoped>
+            <ignoreNonCompile>false</ignoreNonCompile>
+            <ignoreUnusedRuntime>false</ignoreUnusedRuntime>
+            <outputXML>false</outputXML>
+          </configuration>
+          <executions>
+            <execution>
+                <goals>
+                    <goal>analyze-only</goal>
+                </goals>
+                <phase>verify</phase>
+            </execution>
+          </executions>
+        </plugin>
+
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
