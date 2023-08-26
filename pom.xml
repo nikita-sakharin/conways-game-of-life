@@ -30,6 +30,7 @@
     <maven-assembly-plugin.version>3.6.0</maven-assembly-plugin.version>
     <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
     <maven-dependency-plugin.version>3.6.0</maven-dependency-plugin.version>
+    <maven-jar-plugin.version>3.3.0</maven-jar-plugin.version>
     <maven-surefire-plugin.version>3.1.2</maven-surefire-plugin.version>
     <mockito.version>5.4.0</mockito.version>
     <slf4j.version>2.0.7</slf4j.version>
@@ -216,6 +217,30 @@
 
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>${maven-jar-plugin.version}</version>
+          <configuration>
+            <archive>
+              <addMavenDescriptor>false</addMavenDescriptor>
+              <compress>true</compress>
+              <forced>true</forced>
+              <index>true</index>
+              <manifest>
+                <addBuildEnvironmentEntries>false</addBuildEnvironmentEntries>
+                <addClasspath>false</addClasspath>
+                <addDefaultEntries>false</addDefaultEntries>
+                <addDefaultImplementationEntries>false</addDefaultImplementationEntries>
+                <addDefaultSpecificationEntries>false</addDefaultSpecificationEntries>
+                <addExtensions>false</addExtensions>
+                <mainClass>com.github.nikita.sakharin.conwaysgameoflife.Main</mainClass>
+                <packageName>com.github.nikita.sakharin.conwaysgameoflife</packageName>
+              </manifest>
+            </archive>
+          </configuration>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
           <version>${maven-surefire-plugin.version}</version>
           <configuration>
@@ -250,6 +275,10 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
