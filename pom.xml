@@ -225,10 +225,10 @@
           </configuration>
           <executions>
             <execution>
-                <goals>
-                    <goal>analyze-only</goal>
-                </goals>
-                <phase>verify</phase>
+              <goals>
+                <goal>analyze-only</goal>
+              </goals>
+              <phase>verify</phase>
             </execution>
           </executions>
         </plugin>
