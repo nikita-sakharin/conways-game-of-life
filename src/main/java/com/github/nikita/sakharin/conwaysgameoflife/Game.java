@@ -25,7 +25,7 @@ public final class Game implements Runnable {
 
     @Override
     public final void run() {
-        for (long iteration = 0L; ; ++iteration)
+        for (var iteration = 0L; ; ++iteration)
             try (final var previous = generation) {
                 generation = previous.getNextGeneration(cell ->
                     log.info(cell.toString())
