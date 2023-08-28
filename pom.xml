@@ -242,6 +242,7 @@
             <forkCount>1</forkCount>
             <testFailureIgnore>false</testFailureIgnore>
             <printSummary>true</printSummary>
+            <trimStackTrace>false</trimStackTrace>
           </configuration>
         </plugin>
       </plugins>
