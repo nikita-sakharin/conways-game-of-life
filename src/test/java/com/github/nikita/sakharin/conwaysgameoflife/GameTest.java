@@ -35,7 +35,7 @@ public final class GameTest {
         doNothing().when(generation).close();
         when(generation.getNextGeneration(isNotNull())).thenReturn(generation);
         var stubber = doNothing();
-        for (int i = 2; i < TIMES; ++i)
+        for (var i = 2; i < TIMES; ++i)
             stubber = stubber.doNothing();
         stubber.doThrow(RuntimeException.class).when(runnable).run();
 
