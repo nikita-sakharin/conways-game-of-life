@@ -13,7 +13,7 @@ import org.springframework.context.annotation.PropertySource;
 @Configuration
 @PropertySource("classpath:first-generation.properties")
 public class ApplicationConfig {
-    private static final Scanner scanner = new Scanner(System.in);
+    private static final Scanner SCANNER = new Scanner(System.in);
 
     @Bean
     @Profile("!test")
@@ -32,7 +32,7 @@ public class ApplicationConfig {
     public Runnable manual() {
         return () -> {
             System.out.print("Press Enter to continue...");
-            scanner.nextLine();
+            SCANNER.nextLine();
         };
     }
 }
