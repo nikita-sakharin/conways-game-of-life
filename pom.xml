@@ -238,6 +238,7 @@
           <configuration>
             <enableAssertions>true</enableAssertions>
             <encoding>${project.reporting.outputEncoding}</encoding>
+            <failIfNoSpecifiedTests>true</failIfNoSpecifiedTests>
             <reuseForks>true</reuseForks>
             <forkCount>1</forkCount>
             <testFailureIgnore>false</testFailureIgnore>
