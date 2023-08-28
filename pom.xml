@@ -138,6 +138,7 @@
             <descriptorRefs>
               <descriptorRef>jar-with-dependencies</descriptorRef>
             </descriptorRefs>
+            <recompressZippedFiles>true</recompressZippedFiles>
           </configuration>
           <executions>
             <execution>
