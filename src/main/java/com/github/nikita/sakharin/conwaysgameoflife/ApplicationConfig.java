@@ -24,9 +24,7 @@ public class ApplicationConfig {
     @Bean("runnable")
     @Profile("auto")
     public Runnable auto() {
-        return () -> {
-            System.out.println("Next iteration starts...");
-        };
+        return () -> System.out.println("Next iteration starts...");
     }
 
     @Bean("runnable")
