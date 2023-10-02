@@ -229,6 +229,7 @@
                 <packageName>com.github.nikita.sakharin.conwaysgameoflife</packageName>
               </manifest>
             </archive>
+            <skipIfEmpty>false</skipIfEmpty>
           </configuration>
         </plugin>
 
