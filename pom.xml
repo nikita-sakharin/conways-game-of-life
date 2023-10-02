@@ -246,6 +246,7 @@
             <testFailureIgnore>false</testFailureIgnore>
             <printSummary>true</printSummary>
             <trimStackTrace>false</trimStackTrace>
+            <useFile>true</useFile>
           </configuration>
         </plugin>
       </plugins>
