@@ -139,6 +139,7 @@
               <descriptorRef>jar-with-dependencies</descriptorRef>
             </descriptorRefs>
             <recompressZippedFiles>true</recompressZippedFiles>
+        <!--<tarLongFileMode>posix</tarLongFileMode>-->
           </configuration>
           <executions>
             <execution>
