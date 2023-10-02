@@ -243,6 +243,7 @@
             <failIfNoTests>true</failIfNoTests>
             <reuseForks>true</reuseForks>
             <forkCount>1</forkCount>
+            <rerunFailingTestsCount>0</rerunFailingTestsCount>
             <testFailureIgnore>false</testFailureIgnore>
             <printSummary>true</printSummary>
             <trimStackTrace>false</trimStackTrace>
