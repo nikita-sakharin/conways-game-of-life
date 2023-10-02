@@ -241,10 +241,10 @@
             <encoding>${project.reporting.outputEncoding}</encoding>
             <failIfNoSpecifiedTests>true</failIfNoSpecifiedTests>
             <failIfNoTests>true</failIfNoTests>
-            <reuseForks>true</reuseForks>
             <forkCount>1</forkCount>
             <printSummary>true</printSummary>
             <rerunFailingTestsCount>0</rerunFailingTestsCount>
+            <reuseForks>true</reuseForks>
             <testFailureIgnore>false</testFailureIgnore>
             <trimStackTrace>false</trimStackTrace>
             <useFile>true</useFile>
