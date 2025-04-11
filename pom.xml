@@ -8,7 +8,7 @@
   <packaging>jar</packaging>
 
   <name>Conway's Game of Life</name>
-  <url>https://github.com/nikita-sakharin/conways-game-of-life.git</url>
+  <url>https://github.com/nikita-sakharin/conways-game-of-life</url>
   <inceptionYear>2022</inceptionYear>
   <licenses>
     <license>
@@ -18,23 +18,32 @@
     </license>
   </licenses>
 
+  <scm>
+    <connection>scm:git:https://github.com/nikita-sakharin/conways-game-of-life.git</connection>
+    <developerConnection>scm:git:https://github.com/nikita-sakharin/conways-game-of-life.git</developerConnection>
+    <url>https://github.com/nikita-sakharin/conways-game-of-life</url>
+  </scm>
+
   <properties>
-    <java.version>11</java.version>
+    <java.version>21</java.version>
+    <maven.compiler.release>${java.version}</maven.compiler.release>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
     <junit.version>4.13.2</junit.version>
-    <logback.version>1.4.8</logback.version>
-    <maven-assembly-plugin.version>3.6.0</maven-assembly-plugin.version>
-    <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
-    <maven-dependency-plugin.version>3.6.0</maven-dependency-plugin.version>
-    <maven-jar-plugin.version>3.3.0</maven-jar-plugin.version>
-    <maven-surefire-plugin.version>3.1.2</maven-surefire-plugin.version>
-    <mockito.version>5.4.0</mockito.version>
-    <slf4j.version>2.0.7</slf4j.version>
-    <spring.version>5.3.30</spring.version>
+    <logback.version>1.5.18</logback.version>
+    <maven-assembly-plugin.version>3.7.1</maven-assembly-plugin.version>
+    <maven-clean-plugin.version>3.4.1</maven-clean-plugin.version>
+    <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
+    <maven-dependency-plugin.version>3.8.1</maven-dependency-plugin.version>
+    <maven-enforcer-plugin.version>3.5.0</maven-enforcer-plugin.version>
+    <maven-jar-plugin.version>3.4.2</maven-jar-plugin.version>
+    <maven-surefire-plugin.version>3.5.3</maven-surefire-plugin.version>
+    <mockito.version>5.17.0</mockito.version>
+    <slf4j.version>2.0.17</slf4j.version>
+    <spring.version>5.3.39</spring.version>
   </properties>
 
   <dependencyManagement>
@@ -153,13 +162,24 @@
 
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>${maven-clean-plugin.version}</version>
+          <configuration>
+            <excludeDefaultDirectories>false</excludeDefaultDirectories>
+            <failOnError>true</failOnError>
+            <fast>false</fast>
+            <fastMode>background</fastMode>
+            <followSymLinks>false</followSymLinks>
+            <retryOnError>true</retryOnError>
+          </configuration>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>${maven-compiler-plugin.version}</version>
           <configuration>
             <compilerArgs>
-              <arg>-deprecation</arg>
-              <arg>-g:none</arg>
-              <arg>-Werror</arg>
               <arg>-Xdiags:verbose</arg>
           <!--<arg>-Xdoclint:all</arg>-->
               <arg>-Xlint:all</arg>
@@ -171,9 +191,13 @@
             <failOnError>true</failOnError>
             <failOnWarning>true</failOnWarning>
             <fork>true</fork>
+            <implicit>class</implicit>
             <maxmem>1024M</maxmem>
             <meminitial>128M</meminitial>
             <parameters>false</parameters>
+            <proc>full</proc>
+            <release>${maven.compiler.release}</release>
+            <showCompilationChanges>true</showCompilationChanges>
             <showDeprecation>true</showDeprecation>
             <showWarnings>true</showWarnings>
             <source>${maven.compiler.source}</source>
@@ -211,6 +235,27 @@
 
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-enforcer-plugin</artifactId>
+          <version>${maven-enforcer-plugin.version}</version>
+          <configuration>
+            <rules>
+              <requireMavenVersion>
+                <version>3.6.3</version>
+              </requireMavenVersion>
+            </rules>
+          </configuration>
+          <executions>
+            <execution>
+              <goals>
+                <goal>enforce</goal>
+              </goals>
+              <phase>validate</phase>
+            </execution>
+          </executions>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
           <version>${maven-jar-plugin.version}</version>
           <configuration>
@@ -240,10 +285,11 @@
           <version>${maven-surefire-plugin.version}</version>
           <configuration>
             <enableAssertions>true</enableAssertions>
+            <enableOutErrElements>true</enableOutErrElements>
             <encoding>${project.reporting.outputEncoding}</encoding>
             <failIfNoSpecifiedTests>true</failIfNoSpecifiedTests>
             <failIfNoTests>true</failIfNoTests>
-            <forkCount>1</forkCount>
+            <forkCount>1C</forkCount>
             <printSummary>true</printSummary>
             <rerunFailingTestsCount>0</rerunFailingTestsCount>
             <reuseForks>true</reuseForks>
@@ -262,11 +308,19 @@
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-clean-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
