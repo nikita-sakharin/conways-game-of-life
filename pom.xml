@@ -128,6 +128,7 @@
           <artifactId>maven-assembly-plugin</artifactId>
           <version>${maven-assembly-plugin.version}</version>
           <configuration>
+            <appendAssemblyId>true</appendAssemblyId>
             <archive>
               <addMavenDescriptor>false</addMavenDescriptor>
               <compress>true</compress>
@@ -140,6 +141,7 @@
                 <addDefaultImplementationEntries>false</addDefaultImplementationEntries>
                 <addDefaultSpecificationEntries>false</addDefaultSpecificationEntries>
                 <addExtensions>false</addExtensions>
+                <classpathLayoutType>simple</classpathLayoutType>
                 <mainClass>com.github.nikita.sakharin.conwaysgameoflife.Main</mainClass>
                 <packageName>com.github.nikita.sakharin.conwaysgameoflife</packageName>
               </manifest>
@@ -147,7 +149,10 @@
             <descriptorRefs>
               <descriptorRef>jar-with-dependencies</descriptorRef>
             </descriptorRefs>
+            <encoding>${project.build.sourceEncoding}</encoding>
+            <formats>jar</formats>
             <recompressZippedFiles>true</recompressZippedFiles>
+            <skipAssembly>false</skipAssembly>
             <tarLongFileMode>posix</tarLongFileMode>
           </configuration>
           <executions>
@@ -172,6 +177,8 @@
             <fastMode>background</fastMode>
             <followSymLinks>false</followSymLinks>
             <retryOnError>true</retryOnError>
+            <skip>false</skip>
+            <verbose>false</verbose>
           </configuration>
         </plugin>
 
@@ -222,9 +229,11 @@
             <ignoreNonCompile>false</ignoreNonCompile>
             <ignoreUnusedRuntime>false</ignoreUnusedRuntime>
             <outputXML>false</outputXML>
+            <skip>false</skip>
             <usedDependencies>
               <usedDependency>ch.qos.logback:logback-classic</usedDependency>
             </usedDependencies>
+            <verbose>false</verbose>
           </configuration>
           <executions>
             <execution>
@@ -243,6 +252,7 @@
           <version>${maven-enforcer-plugin.version}</version>
           <configuration>
             <fail>true</fail>
+            <failFast>false</failFast>
             <failIfNoRules>true</failIfNoRules>
             <ignoreCache>false</ignoreCache>
             <rules>
@@ -266,7 +276,7 @@
               </requireMavenVersion>
               <requireSameVersions>
                 <dependencies>
-                  <dependency>ch.qos.logback:logback-classic</dependency>
+                  <dependency>ch.qos.logback</dependency>
                 </dependencies>
                 <dependencies>
                   <dependency>org.springframework</dependency>
@@ -304,6 +314,7 @@
                 <addDefaultImplementationEntries>false</addDefaultImplementationEntries>
                 <addDefaultSpecificationEntries>false</addDefaultSpecificationEntries>
                 <addExtensions>false</addExtensions>
+                <classpathLayoutType>simple</classpathLayoutType>
                 <mainClass>com.github.nikita.sakharin.conwaysgameoflife.Main</mainClass>
                 <packageName>com.github.nikita.sakharin.conwaysgameoflife</packageName>
               </manifest>
