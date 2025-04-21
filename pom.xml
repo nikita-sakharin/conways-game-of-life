@@ -269,7 +269,7 @@
                 <uniqueVersions>true</uniqueVersions>
               </dependencyConvergence>
               <requireJavaVersion>
-                <version>21.0.6</version>
+                <version>${java.version}.0.6</version>
               </requireJavaVersion>
               <requireMavenVersion>
                 <version>3.6.3</version>
