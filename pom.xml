@@ -359,6 +359,7 @@ under the License.
             <failIfNoTests>true</failIfNoTests>
             <forkCount>1C</forkCount>
             <printSummary>true</printSummary>
+            <reportFormat>brief</reportFormat>
             <rerunFailingTestsCount>0</rerunFailingTestsCount>
             <reuseForks>true</reuseForks>
             <skip>false</skip>
