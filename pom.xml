@@ -353,7 +353,10 @@ under the License.
           <artifactId>maven-resources-plugin</artifactId>
           <version>${maven-resources-plugin.version}</version>
           <configuration>
+            <addDefaultExcludes>true</addDefaultExcludes>
+            <encoding>${project.build.sourceEncoding}</encoding>
             <skip>false</skip>
+            <useDefaultDelimiters>true</useDefaultDelimiters>
           </configuration>
         </plugin>
 
