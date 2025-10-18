@@ -464,4 +464,20 @@ under the License.
       </plugin>
     </plugins>
   </build>
+  <distributionManagement>
+    <repository>
+      <id>github</id>
+      <layout>default</layout>
+      <name>GitHub Packages</name>
+      <uniqueVersion>false</uniqueVersion>
+      <url>https://maven.pkg.github.com/nikita-sakharin/conways-game-of-life</url>
+    </repository>
+    <snapshotRepository>
+      <id>github</id>
+      <layout>default</layout>
+      <name>GitHub Packages</name>
+      <uniqueVersion>true</uniqueVersion>
+      <url>https://maven.pkg.github.com/nikita-sakharin/conways-game-of-life</url>
+    </snapshotRepository>
+  </distributionManagement>
 </project>
