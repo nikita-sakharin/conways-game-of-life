@@ -35,6 +35,8 @@ jobs:
         distribution: 'temurin'
         java-package: 'jdk'
         java-version: '21'
+        server-id: github
+        settings-path: ${{ github.workspace }}
     - name: 'Build with Maven'
       run: mvn --batch-mode --strict-checksums --file pom.xml --threads 1C --update-snapshots deploy
     - name: 'Update dependency graph'
