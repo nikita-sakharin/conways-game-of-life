@@ -26,19 +26,19 @@ jobs:
     runs-on: 'ubuntu-latest'
     steps:
     - name: 'Checkout'
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
     - name: 'Set up JDK 21'
-      uses: actions/setup-java@v4
+      uses: actions/setup-java@v5
       with:
         cache: 'maven'
         check-latest: true
         distribution: 'temurin'
         java-package: 'jdk'
-        java-version: '21'
+        java-version: '25'
         server-id: github
         settings-path: ${{ github.workspace }}
     - name: 'Build with Maven'
-      run: echo ${{ github.workspace }} && echo "$GITHUB_WORKSPACE" && ls -al "$GITHUB_WORKSPACE" && cat "$GITHUB_WORKSPACE"/settings.xml && mvn --batch-mode --strict-checksums --file pom.xml --settings "$GITHUB_WORKSPACE"/settings.xml --threads 1C --update-snapshots deploy
+      run: mvn --batch-mode --strict-checksums --file pom.xml --settings "$GITHUB_WORKSPACE"/settings.xml --threads 1C --update-snapshots deploy
       env:
         GITHUB_TOKEN: ${{ github.token }}
     - name: 'Update dependency graph'
