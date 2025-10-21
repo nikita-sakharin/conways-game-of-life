@@ -16,5 +16,8 @@
 *.txz
 *.war
 *.zip
+.DS_Store
 .idea/
+dependency-reduced-pom.xml
+release.properties
 target/
