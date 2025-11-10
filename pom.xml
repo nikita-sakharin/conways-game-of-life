@@ -315,10 +315,10 @@ under the License.
               </dependencyConvergence>
               <requireExplicitDependencyScope/>
               <requireJavaVersion>
-                <version>${java.version}.0.0</version>
+                <version>${java.version}.0.1</version>
               </requireJavaVersion>
               <requireMavenVersion>
-                <version>3.6.3</version>
+                <version>3.9.11</version>
               </requireMavenVersion>
               <requireSameVersions>
                 <dependencies>
