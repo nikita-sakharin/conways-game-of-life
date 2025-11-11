@@ -406,6 +406,7 @@ under the License.
             <reportFormat>brief</reportFormat>
             <rerunFailingTestsCount>0</rerunFailingTestsCount>
             <reuseForks>true</reuseForks>
+            <shutdown>exit</shutdown>
             <skip>false</skip>
             <skipAfterFailureCount>0</skipAfterFailureCount>
             <skipTests>false</skipTests>
