@@ -413,6 +413,7 @@ under the License.
             <systemPropertyVariables>
               <java.io.tmpdir>${project.build.directory}/tmp</java.io.tmpdir>
             </systemPropertyVariables>
+            <tempDir>surefire</tempDir>
             <testFailureIgnore>false</testFailureIgnore>
             <trimStackTrace>false</trimStackTrace>
             <useFile>true</useFile>
