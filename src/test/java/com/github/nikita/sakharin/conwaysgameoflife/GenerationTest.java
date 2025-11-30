@@ -23,11 +23,11 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 import java.util.stream.Stream;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import static java.util.Map.entry;
 import static java.util.function.Function.identity;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public final class GenerationTest {
     private static final int LENGTH = 3, COUNT = 1 << LENGTH * LENGTH;

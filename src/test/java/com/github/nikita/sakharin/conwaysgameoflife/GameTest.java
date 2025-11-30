@@ -16,14 +16,14 @@
  */
 package com.github.nikita.sakharin.conwaysgameoflife;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringRunner;
-import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertThrows;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.isNotNull;
 import static org.mockito.Mockito.times;
@@ -33,7 +33,7 @@ import static org.mockito.Mockito.when;
 
 @ActiveProfiles("test")
 @ContextConfiguration(classes = TestConfig.class)
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 public final class GameTest {
     private static final int TIMES = 10;
 
