@@ -18,6 +18,7 @@
 *.zip
 .DS_Store
 .idea/
+.surefire-*
 dependency-reduced-pom.xml
 release.properties
 target/
