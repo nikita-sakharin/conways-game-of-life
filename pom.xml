@@ -223,6 +223,7 @@ under the License.
           <!--<arg>-Xdoclint:all</arg>-->
               <arg>-Xlint:all</arg>
             </compilerArgs>
+            <compilerId>javac</compilerId>
             <debug>false</debug>
             <debuglevel>none</debuglevel>
             <enablePreview>false</enablePreview>
