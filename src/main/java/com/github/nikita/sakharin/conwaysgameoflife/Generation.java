@@ -28,7 +28,7 @@ public final class Generation implements AutoCloseable {
     private final Stream<Cell> liveCells;
 
     private Generation() {
-        throw new UnsupportedOperationException();
+        throw new AssertionError();
     }
 
     public Generation(final Stream<Cell> liveCells) {
