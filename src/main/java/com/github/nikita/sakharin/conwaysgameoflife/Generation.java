@@ -28,7 +28,7 @@ public final class Generation implements AutoCloseable {
     private final Stream<Cell> liveCells;
 
     private Generation() {
-        throw new AssertionError();
+        throw new AssertionError("Suppress default constructor");
     }
 
     public Generation(final Stream<Cell> liveCells) {
