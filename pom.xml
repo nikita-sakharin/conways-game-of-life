@@ -405,6 +405,7 @@ under the License.
             <failIfNoSpecifiedTests>true</failIfNoSpecifiedTests>
             <failIfNoTests>true</failIfNoTests>
             <forkCount>1C</forkCount>
+            <forkedProcessExitTimeoutInSeconds>60</forkedProcessExitTimeoutInSeconds>
             <printSummary>true</printSummary>
             <reportFormat>brief</reportFormat>
             <rerunFailingTestsCount>0</rerunFailingTestsCount>
